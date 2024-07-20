@@ -11,6 +11,7 @@ export enum TestChainName {
   test2 = 'test2',
   test3 = 'test3',
   test4 = 'test4',
+  sepolia = 'sepolia',
 }
 
 export const testChains: Array<ChainName> = Object.values(TestChainName);
@@ -38,6 +39,35 @@ export const test1: ChainMetadata = {
   nativeToken: { decimals: 18, name: 'Ether', symbol: 'ETH' },
   protocol: ProtocolType.Ethereum,
   rpcUrls: [{ http: 'http://127.0.0.1:8545' }],
+};
+
+export const sepolia: ChainMetadata = {
+  blockExplorers: [
+    {
+      apiKey: 'fakelove',
+      apiUrl: 'https://api-sepolia.etherscan.io/api',
+      family: ExplorerFamily.Etherscan,
+      name: 'Etherscan',
+      url: 'https://sepolia.etherscan.io',
+    },
+  ],
+  blocks: {
+    confirmations: 1,
+    estimateBlockTime: 3,
+    reorgPeriod: 0,
+  },
+  chainId: 11155111,
+  displayName: 'sepolia',
+  domainId: 11155111,
+  isTestnet: true,
+  name: 'sepolia',
+  nativeToken: { decimals: 18, name: 'Ether', symbol: 'ETH' },
+  protocol: ProtocolType.Ethereum,
+  rpcUrls: [
+    {
+      http: 'https://eth-sepolia.g.alchemy.com/v2/jWmA0ERPc0JdyMrZSEiM5lOBpEu2hD2l',
+    },
+  ],
 };
 
 export const test2: ChainMetadata = {
@@ -75,6 +105,7 @@ export const test4: ChainMetadata = {
 };
 
 export const testChainMetadata: ChainMap<ChainMetadata> = {
+  sepolia,
   test1,
   test2,
   test3,

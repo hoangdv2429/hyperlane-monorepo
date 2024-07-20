@@ -79,6 +79,7 @@
     "test:ci": "yarn test",
     "test:unit": "mocha --config .mocharc.json './src/**/*.test.ts' --exit",
     "test:hardhat": "NODE_OPTIONS='--experimental-loader ts-node/esm/transpile-only --no-warnings=ExperimentalWarning' hardhat --config hardhat.config.cts test $(find ./src -name \"*.hardhat-test.ts\")",
+    "test:trusted_relayer": "NODE_OPTIONS='--experimental-loader ts-node/esm/transpile-only --no-warnings=ExperimentalWarning' hardhat --config hardhat.config.cts test $(find ./src -name \"trustedRelayerIsm.hardhat-test.ts\")",
     "test:foundry": "./scripts/foundry-test.sh"
   },
   "peerDependencies": {
